@@ -1,6 +1,8 @@
 import {Component} from "react";
 
 class Moviecart extends Component{
+
+   
     render(){
         return(
             <div className="main">
