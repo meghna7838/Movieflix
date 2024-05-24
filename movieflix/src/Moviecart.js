@@ -1,9 +1,19 @@
 import {Component} from "react";
 
 class Moviecart extends Component{
-
+  constructor(){
+    super();
+    this.state ={
+      title:"The Avengers",
+      plot:"Supernatural powers shown in the movie",
+      price:199,
+      rating:8.9,
+    }
+  }
    
     render(){
+
+      const {title,plot,price,rating} = this.state;
         return(
             <div className="main">
             <div className="movie-card">
@@ -11,11 +21,11 @@ class Moviecart extends Component{
                 <img alt="Poster" src="https://cdn.pixabay.com/photo/2022/05/25/02/37/nft-7219625_960_720.png"/>
               </div>
               <div className="right">
-                <div className="title">The Avenger</div>
-                <div className="plot">Supernatural power depiction</div>
-                <div className="price">100$</div>
+                <div className="title">{this.state.title}</div>
+                <div className="plot">{plot}</div>
+                <div className="price">{price}$</div>
                 <div className="footer">
-                    <div className="rating">rating</div>
+                    <div className="rating">{rating}</div>
                     <div className="star-dis">
                       <img className="str-btn"
                       alt="decrease"
