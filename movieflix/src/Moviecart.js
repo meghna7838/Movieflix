@@ -15,18 +15,28 @@ class Moviecart extends Component{
    //If we want to avoid binding we can simply write arrow function instead of normal func.
   addstars(){
     //this.state.star=this.state.star+0.5;
-    //Form1
-    this.setState({
-      star:this.state.star+0.5 
-    });
+    // //Form1
+    // this.setState({
+    //   star:this.state.star+0.5 
+    // });
 
     //Form2
-    // this.setState((prevState)=>{
-    //   return { 
-    //     star:this.state.star+0.5;
-    //   }
-    // })
+    this.setState((prevState)=>{
+      return { 
+        star:this.state.star+0.5
+      }
+    })
     console.log(this.state.star);
+  }
+
+   decreaseStar=()=>{
+    if(this.state.star>0){
+    this.setState((prevState)=>{
+      return{
+        star:prevState.star-0.5
+      }
+    });
+  }
   }
     render(){
 
@@ -46,7 +56,8 @@ class Moviecart extends Component{
                     <div className="star-dis">
                       <img className="str-btn"
                       alt="decrease"
-                      src="https://cdn-icons-png.flaticon.com/128/1828/1828901.png"/>
+                      src="https://cdn-icons-png.flaticon.com/128/1828/1828901.png"
+                      onClick={this.decreaseStar}/>
 
                       <img className="star" 
                       alt="star" 
