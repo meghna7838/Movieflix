@@ -8,12 +8,18 @@ class Moviecart extends Component{
       plot:"Supernatural powers shown in the movie",
       price:199,
       rating:8.9,
+      star:0,
     }
+    this.addstars = this.addstars.bind(this);//Global binding 
   }
-   
+   //If we want to avoid binding we can simply write arrow function instead of normal func.
+  addstars(){
+    this.state.star=this.state.star+0.5;
+    console.log(this.state.star);
+  }
     render(){
 
-      const {title,plot,price,rating} = this.state;
+      const {title,plot,price,rating,star} = this.state;
         return(
             <div className="main">
             <div className="movie-card">
@@ -37,9 +43,12 @@ class Moviecart extends Component{
                       
                       <img className="str-btn"
                       alt="increase"
-                      src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png"/>
+                      src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png"
+                      //onClick={this.addstars.bind(this)} Local binding
+                      onClick={this.addstars}
+                      />
 
-                      <span>0</span>
+                      <span>{star}</span>
                     </div>
                     <button className="favourite-btn">Fav</button>
                     <button className="cart-btn">Cart</button>
