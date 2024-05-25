@@ -20,6 +20,8 @@ class Moviecart extends Component{
     //   star:this.state.star+0.5 
     // });
 
+    if(this.state.star>=5)
+      return;
     //Form2
     this.setState((prevState)=>{
       return { 
