@@ -14,7 +14,18 @@ class Moviecart extends Component{
   }
    //If we want to avoid binding we can simply write arrow function instead of normal func.
   addstars(){
-    this.state.star=this.state.star+0.5;
+    //this.state.star=this.state.star+0.5;
+    //Form1
+    this.setState({
+      star:this.state.star+0.5 
+    });
+
+    //Form2
+    // this.setState((prevState)=>{
+    //   return { 
+    //     star:this.state.star+0.5;
+    //   }
+    // })
     console.log(this.state.star);
   }
     render(){
