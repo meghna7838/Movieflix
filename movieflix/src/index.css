@@ -110,6 +110,18 @@ flex:10;
   position: relative;
 }
 
+.unfavourite-btn{
+  background-color: red;
+  color:white;
+  text-shadow: none;
+  margin:5px;
+}
+.remove-cart-btn{
+  background-color: red;
+  color:white;
+  text-shadow: none;
+  margin:5px;
+}
 
 
 
