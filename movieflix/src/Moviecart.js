@@ -1,19 +1,8 @@
 import {Component} from "react";
 
 class Moviecart extends Component{
-  constructor(){
-    super();
-    this.state ={
-      title:"The Avengers",
-      plot:"Supernatural powers shown in the movie",
-      price:199,
-      rating:8.9,
-      star:0,
-      fav:false,
-      cart:false
-    }
-    this.addstars = this.addstars.bind(this);//Global binding 
-  }
+  
+    
    //If we want to avoid binding we can simply write arrow function instead of normal func.
   addstars(){
     //this.state.star=this.state.star+0.5;
@@ -56,7 +45,8 @@ class Moviecart extends Component{
   }
     render(){
 
-      const {title,plot,price,rating,star,fav,cart} = this.state;
+      let {title,plot,price,rating,star,fav,cart} = this.props;
+        
         return(
             <div className="main">
             <div className="movie-card">
@@ -64,7 +54,7 @@ class Moviecart extends Component{
                 <img alt="Poster" src="https://cdn.pixabay.com/photo/2022/05/25/02/37/nft-7219625_960_720.png"/>
               </div>
               <div className="right">
-                <div className="title">{this.state.title}</div>
+                <div className="title">{title}</div>
                 <div className="plot">{plot}</div>
                 <div className="price">{price}$</div>
                 <div className="footer">
