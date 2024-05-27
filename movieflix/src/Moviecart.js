@@ -45,7 +45,8 @@ class Moviecart extends Component{
   }
     render(){
 
-      let {title,plot,price,rating,star,fav,cart} = this.props;
+      //let {title,plot,price,rating,star,fav,cart} = this.props; //Way 1
+      let {title,plot,price,rating,star,fav,cart} = this.props.movies; //Way2
         
         return(
             <div className="main">
