@@ -46,9 +46,51 @@ class Movielist extends Component{
         }
     }
 
-    handleincStar = () =>{
+    handleincStar = (movie) =>{
+      const {movies} = this.state;
+      const mid = movies.indexOf(movie);
+      if(movies.star >=5)
+        {
+          return;
+        }
+      movies[mid].star +=0.5;
+      this.setState({
+        movies:movies
+      })
+    }
+
+    decreasestar = (movie) =>{
+      const {movies} = this.state;
+      const mid = movies.indexOf(movie);
+      if(movies[mid].star<=0)
+        {
+          return;
+        }
+      movies[mid].star -=0.5;
+      this.setState({
+        movies:movies
+      })
+    }
+    handleClickFav = (movie) =>{
+      const {movies} = this.state;
+      const mid = movies.indexOf(movie);
+      movies[mid].fav=!movies[mid].fav;
+        this.setState({
+       movies:movies
+       })
       
     }
+
+    handleClickCart = (movie) =>{
+      const {movies} = this.state;
+      const mid = movies.indexOf(movie);
+      movies[mid].cart= !movies[mid].cart;
+        this.setState({
+          movies
+        })
+    }
+
+
     render(){
         //let {title,plot,price,rating,star,fav,cart} = this.state;
         const {movies} = this.state;
@@ -67,7 +109,7 @@ class Movielist extends Component{
         // );
         return(//Way2
         <div className="main">
-        {movies.map((movie)=>(<Moviecart movies={movie}/>))}
+        {movies.map((movie)=>(<Moviecart movies={movie} increaseStar={this.handleincStar} decreasestar={this.decreasestar} handleClickFav={this.handleClickFav} handleClickCart={this.handleClickCart}/>))}
         </div>
         )
     

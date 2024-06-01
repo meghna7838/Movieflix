@@ -45,6 +45,7 @@ class Moviecart extends Component{
   // }
     render(){
 
+      let {movies,increaseStar,decreasestar,handleClickCart,handleClickFav} =this.props;
       //let {title,plot,price,rating,star,fav,cart} = this.props; //Way 1
       let {title,plot,price,rating,star,fav,cart} = this.props.movies; //Way2
         
@@ -64,7 +65,7 @@ class Moviecart extends Component{
                       <img className="str-btn"
                       alt="decrease"
                       src="https://cdn-icons-png.flaticon.com/128/1828/1828901.png"
-                      onClick={this.decreaseStar}/>
+                      onClick={()=>{decreasestar(movies)}}/>
 
                       <img className="star" 
                       alt="star" 
@@ -74,7 +75,7 @@ class Moviecart extends Component{
                       alt="increase"
                       src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png"
                       //onClick={this.addstars.bind(this)} Local binding
-                      onClick={this.addstars}
+                      onClick={()=>{increaseStar(movies)}}
                       />
 
                       <span>{star}</span>
@@ -82,9 +83,9 @@ class Moviecart extends Component{
                     {/* {fav?<button className="unfavourite-btn" onClick={this.handleClick}>Un-favourite</button>:
                       <button className="favourite-btn"onClick={this.handleClick}>Favourite</button>} */}
 
-                    <button className={fav?"unfavourite-btn":"favourite-btn"} onClick={this.handleClick}>{fav?"UnFavourite":"Favourite"}</button>
+                    <button className={fav?"unfavourite-btn":"favourite-btn"} onClick={()=>{handleClickFav(movies)}}>{fav?"UnFavourite":"Favourite"}</button>
                     
-                    <button className={cart?"cart-btn":"remove-cart-btn"} onClick={this.handleClickCart}>{cart?"Cart":"Remove"}</button>
+                    <button className={cart?"cart-btn":"remove-cart-btn"} onClick={()=>{handleClickCart(movies)}}>{cart?"Cart":"Remove"}</button>
                 </div>
               </div>
             </div>
