@@ -46,10 +46,12 @@ class Movielist extends Component{
         }
     }
 
-    
+    handleincStar = () =>{
+      
+    }
     render(){
         //let {title,plot,price,rating,star,fav,cart} = this.state;
-        const movies = this.state;
+        const {movies} = this.state;
         
         // Way 1
         //return(
@@ -65,12 +67,8 @@ class Movielist extends Component{
         // );
         return(//Way2
         <div className="main">
-        {movies.map((movie,index) => (
-        <Moviecart movies = {movie}
-                   key = {index}/>
-
-    ))}              
-    </div>
+        {movies.map((movie)=>(<Moviecart movies={movie}/>))}
+        </div>
         )
     
 }

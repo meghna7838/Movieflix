@@ -4,45 +4,45 @@ class Moviecart extends Component{
   
     
    //If we want to avoid binding we can simply write arrow function instead of normal func.
-  addstars(){
-    //this.state.star=this.state.star+0.5;
-    // //Form1
-    // this.setState({
-    //   star:this.state.star+0.5 
-    // });
+  // addstars(){
+  //   //this.state.star=this.state.star+0.5;
+  //   // //Form1
+  //   // this.setState({
+  //   //   star:this.state.star+0.5 
+  //   // });
 
-    if(this.state.star>=5)
-      return;
-    //Form2
-    this.setState((prevState)=>{
-      return { 
-        star:this.state.star+0.5
-      }
-    })
-    console.log(this.state.star);
-  }
+  //   if(this.state.star>=5)
+  //     return;
+  //   //Form2
+  //   this.setState((prevState)=>{
+  //     return { 
+  //       star:this.state.star+0.5
+  //     }
+  //   })
+  //   console.log(this.state.star);
+  // }
 
-   decreaseStar=()=>{
-    if(this.state.star>0){
-    this.setState((prevState)=>{
-      return{
-        star:prevState.star-0.5
-      }
-    });
-  }
-  }
+  //  decreaseStar=()=>{
+  //   if(this.state.star>0){
+  //   this.setState((prevState)=>{
+  //     return{
+  //       star:prevState.star-0.5
+  //     }
+  //   });
+  // }
+  // }
 
-  handleClick =()=>{
-    this.setState({
-      fav:!this.state.fav
-    })
-  }
+  // handleClick =()=>{
+  //   this.setState({
+  //     fav:!this.state.fav
+  //   })
+  // }
 
-  handleClickCart = () =>{
-    this.setState({
-      cart:!this.state.cart
-    })
-  }
+  // handleClickCart = () =>{
+  //   this.setState({
+  //     cart:!this.state.cart
+  //   })
+  // }
     render(){
 
       //let {title,plot,price,rating,star,fav,cart} = this.props; //Way 1
