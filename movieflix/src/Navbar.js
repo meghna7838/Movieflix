@@ -1,17 +1,27 @@
 import React from "react";
+import styled from "styled-components";
+
+const Nav = styled.div `
+width:100%;
+height:70px;
+background-color:cadetblue;
+display:flex;
+justify-content:space-between
+
+`
 class Navbar extends React.Component{
 
     render()
     {
         return(
             <>
-            <div style={style.nav}>
+            <Nav>
             <div style={style.title}>Movie-App</div>
             <div style={style.cartContainer}>
             <img src="https://cdn-icons-png.flaticon.com/128/891/891462.png" style={style.cartIcon}/>
             <span style={style.cartCount}>0</span>  
             </div>
-            </div>
+            </Nav>
             </>
         )
     }
