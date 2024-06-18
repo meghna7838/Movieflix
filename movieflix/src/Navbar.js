@@ -4,11 +4,42 @@ import styled from "styled-components";
 const Nav = styled.div `
 width:100%;
 height:70px;
-background-color:cadetblue;
+background:linear-gradient(170deg, #1bc059,#0d47a1);
 display:flex;
-justify-content:space-between
+justify-content:space-between;
+align-items:center;
+position:relative
 
+`;
+const Title= styled.div`
+    font-size:40px;
+    color:#fff;
+    font-weight:600;
+    font-family:'Montserrat,sans-serif';
+    text-transform:uppercase;
+    margin-left:20`;
+
+const Cartcontainer = styled.div`
+cursor:pointer;
+position:relative;
+`;
+
+const Carticon = styled.img`
+margin-right:20px;
+margin-top:5px;
+height:40px;
+`;
+
+const Cartcount = styled.span`
+background:orange;
+border-radius:50%;
+padding:4px 8px;
+position:absolute;
+right:10;
+top:-5;
+font-size:12
 `
+
 class Navbar extends React.Component{
 
     render()
@@ -16,11 +47,11 @@ class Navbar extends React.Component{
         return(
             <>
             <Nav>
-            <div style={style.title}>Movie-App</div>
-            <div style={style.cartContainer}>
-            <img src="https://cdn-icons-png.flaticon.com/128/891/891462.png" style={style.cartIcon}/>
-            <span style={style.cartCount}>0</span>  
-            </div>
+            <Title>Movie-App</Title>
+            <Cartcontainer>
+            <Carticon src="https://cdn-icons-png.flaticon.com/128/891/891462.png" />
+            <Cartcount>0</Cartcount>  
+            </Cartcontainer>
             </Nav>
             </>
         )
