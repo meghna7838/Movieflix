@@ -1,4 +1,12 @@
 import {Component} from "react";
+import styled from "styled-components";
+
+const Moviecartstyle= styled.div`
+  background: linear-gradient(160deg,#94a894,#467cb0);
+  position: relative;
+  flex:10;
+`;
+
 
 class Moviecart extends Component{
   
@@ -43,6 +51,8 @@ class Moviecart extends Component{
   //     cart:!this.state.cart
   //   })
   // }
+
+  
     render(){
 
       let {movies,increaseStar,decreasestar,handleClickCart,handleClickFav} =this.props;
@@ -55,7 +65,7 @@ class Moviecart extends Component{
               <div className="left">
                 <img alt="Poster" src="https://cdn.pixabay.com/photo/2022/05/25/02/37/nft-7219625_960_720.png"/>
               </div>
-              <div className="right">
+              <Moviecartstyle>
                 <div className="title">{title}</div>
                 <div className="plot">{plot}</div>
                 <div className="price">{price}$</div>
@@ -87,7 +97,7 @@ class Moviecart extends Component{
                     
                     <button className={cart?"cart-btn":"remove-cart-btn"} onClick={()=>{handleClickCart(movies)}}>{cart?"Cart":"Remove"}</button>
                 </div>
-              </div>
+              </Moviecartstyle>
             </div>
           </div>
         )
