@@ -1,12 +1,11 @@
-import {Component} from "react";
 import Moviecart from "./Moviecart";
 import {movies} from "./MoviesData"
 
-class Movielist extends Component{
+function Movielist(props){
 
-    render(){
+   
         //let {title,plot,price,rating,star,fav,cart} = this.state;
-        const {movies,handleincStar,decreasestar,handleClickFav,handleClickCart} = this.props;
+        const {movies,handleincStar,decreasestar,handleClickFav,handleClickCart} = props;
         
         // Way 1
         //return(
@@ -32,5 +31,5 @@ class Movielist extends Component{
         )
     
 }
-}
+
 export default Movielist;

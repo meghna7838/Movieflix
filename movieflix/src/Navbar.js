@@ -45,11 +45,9 @@ font-size:12px;
 visibility:${(props)=>props.show?"visible":"hidden"}
 `
 
-class Navbar extends React.Component{
+function Navbar(props){
 
-    render()
-    {
-        const {cartCount}=this.props;
+        const {cartCount}=props;
         return(
             <>
             <Nav>
@@ -62,7 +60,6 @@ class Navbar extends React.Component{
             </>
         )
     }
-}
 
 //Internal styling 
 

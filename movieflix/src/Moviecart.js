@@ -8,7 +8,7 @@ const Moviecartstyle= styled.div`
 `;
 
 
-class Moviecart extends Component{
+function Moviecart(props){
   
     
    //If we want to avoid binding we can simply write arrow function instead of normal func.
@@ -53,11 +53,11 @@ class Moviecart extends Component{
   // }
 
   
-    render(){
+    
 
-      let {movies,increaseStar,decreasestar,handleClickCart,handleClickFav} =this.props;
+      let {movies,increaseStar,decreasestar,handleClickCart,handleClickFav} =props;
       //let {title,plot,price,rating,star,fav,cart} = this.props; //Way 1
-      let {title,plot,price,rating,star,fav,cart} = this.props.movies; //Way2
+      let {title,plot,price,rating,star,fav,cart} = props.movies; //Way2
         
         return(
             <div className="main">
@@ -103,6 +103,6 @@ class Moviecart extends Component{
         )
     }
     
-}
+
 
 export default Moviecart;
