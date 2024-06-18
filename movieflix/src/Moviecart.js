@@ -95,7 +95,7 @@ class Moviecart extends Component{
 
                     <button className={fav?"unfavourite-btn":"favourite-btn"} onClick={()=>{handleClickFav(movies)}}>{fav?"UnFavourite":"Favourite"}</button>
                     
-                    <button className={cart?"cart-btn":"remove-cart-btn"} onClick={()=>{handleClickCart(movies)}}>{cart?"Cart":"Remove"}</button>
+                    <button className={cart?"cart-btn":"remove-cart-btn"} onClick={()=>{handleClickCart(movies)}}>{cart?"Remove from cart":"Add to cart"}</button>
                 </div>
               </Moviecartstyle>
             </div>

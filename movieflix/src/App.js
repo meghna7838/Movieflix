@@ -8,7 +8,7 @@ class App extends React.Component{
     super();
     this.state ={
         movies : movies,
-        cartCount:3
+        cartCount:0
     }
     }
 
@@ -48,21 +48,31 @@ class App extends React.Component{
       }
 
       handleClickCart = (movie) =>{
-        const {movies} = this.state;
+        let {movies,cartCount} = this.state;
         const mid = movies.indexOf(movie);
         movies[mid].cart= !movies[mid].cart;
+        if(movies[mid].cart)
+          {          
+            cartCount=cartCount+1;
+          }
+        else
+          {
+            cartCount=cartCount-1;
+          }
           this.setState({
-            movies
+            movies,
+            cartCount
           })
       }
 
 
   render(){
 
+    const {movies,cartCount} = this.state;
+
     return (
       <>
-      <Navbar/>
-        <h1>Movieflix</h1>
+      <Navbar cartCount={cartCount}/>
         <Movielist movies={movies} 
         handleincStar={this.handleincStar}
         decreasestar={this.decreasestar}

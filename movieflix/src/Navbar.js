@@ -49,13 +49,14 @@ class Navbar extends React.Component{
 
     render()
     {
+        const {cartCount}=this.props;
         return(
             <>
             <Nav>
             <Title>Movie-App</Title>
             <Cartcontainer>
             <Carticon className={navstyle.carticon} src="https://cdn-icons-png.flaticon.com/128/891/891462.png" />
-            <Cartcount className={navstyle.cartcount} color="yellow" show={true}>0</Cartcount>  
+            <Cartcount className={navstyle.cartcount} color="yellow" show={true}>{cartCount}</Cartcount>  
             </Cartcontainer>
             </Nav>
             </>
